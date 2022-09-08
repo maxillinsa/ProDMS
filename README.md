@@ -4,6 +4,8 @@
 Cronosdoc is an agile and highly scalable platform that seamlessly integrates with your IT infrastructure and databases. The ability to upload, search for, and collaborate on documents has to be lightning fast. And it has to be built for collaborative environments with multiple users to work off of a single inter-connected database.
 Cronosdoc comprises of products/tools for Digitization, Electronic Workflow Management, Document Archival, Advanced Search and Email Data Management.
 
+#### Built with PHP [No framework]
+
 Demo Link: https://www.ifeapp.com/ProDMS<br>
 Username: maxillin<br>
 Password: 123456
