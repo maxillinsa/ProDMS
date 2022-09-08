@@ -1,0 +1,6 @@
+<?php 
+	unset($_COOKIE['curuser']);
+    setcookie('curuser', '', time() - 3600, '/'); // empty value and old timestamp
+	header("location:index.php");
+
+?>

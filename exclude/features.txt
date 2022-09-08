@@ -1,0 +1,50 @@
+Full-text Indexing
+Version Control
+Document Searching
+Folder Searching
+Drop Spot (Drag & Drop from Desktop)
+Multiple Workspaces
+Full Preview
+OCR Recognition - Metadata Extraction PDF
+Document Categories - 
+Import from ZIP archives
+Integration with scanning softwares
+Drop-Off
+Send file as E-mail or Download 
+Integrated Contacts 
+Workflow
+Security Policies on Menus
+Security Policies on Folders
+Single Sign-on
+Audit Log
+Archiving
+Multiple Tenants
+Basic Statistics
+Standard Reports
+HTTP / HTTPS
+Web Services (SOAP & RESTful)
+Document Discussion & Messaging
+Document Replacement
+All with Audit Trail
+Support for multiple file types
+
+
+CronosDoc is an electronic document management system is a software system designed to organize and store documents of different kinds or forms.
+
+
+With the CronosDoc, you can store a large volume of digital documents centrally, and CronosDoc is designed with great features for proper efficiency!
+
+This App contains a web-based user interface that performs operations including file sharing, setting security roles, and finding and auditing enterprise records and registers. By using a document management system, users can easily communicate and collaborate with one another. Documents are not created or consumed in a vacuum – information is created for a purpose! Furthermore, the flow of documents through the business cycle can be tracked and managed, from sharing and collaboration. Even if your start from paper documents, you can digitalize them and then let the document management software to handle their conversion into digital documents and organization in filing cabinets.
+
+
+CronosDoc puts the knowledge worker in condition to find, use, share, and secure valuable corporate content. Information assets contribute to the constant flow of business, and collaboration on new or existing documents is central to how users engage with corporate knowledge. A secure, interactive archive connects teams to critical information, even across the most decentralized organizations.
+
+
+To ensure that digital documents are classified accordingly, many information systems rely on a comprehensive process for the storage of documents, with certain elements known as metadata inclusive. With the metadata around a document, easy access to essential details is provided to those who are looking for what they need in archives; be it by keywords, chronology, topic, or other related strategies. Most times, the precise documentation for original storage protocols is an essential part of what rates an electronic document management system so valuable to an organization or a business.
+
+Share and Collaborate
+In the last 15 years, the document management solutions evolved from simple document imaging to more complex tasks like workflow, aditing and collaboration.
+
+Nowadays our electronic document management system(edms) helps your employees to save time by finding the right information exactly when it’s needed. Empower your teams to share, access, enrich, and store high-quality content in a single place and improve. LogicalDOC implements both content management and records management and can manage all of your organization’s documents and valuable intelligence in a secure archive that spans the entire company. Create, distribute, and improve records within team collaborative workspaces while ensuring proper approval and reviews with positive workflow.
+
+LogicalDOC can be deployed in different ways:

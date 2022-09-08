@@ -1,0 +1,10 @@
+<?php 
+
+$id=$_GET['id'];
+	include("controller/func.php");
+	$dd = date('Y-m-d');
+	$curuser=@$_COOKIE['curuser'];
+	$res=mysql_query("update pro_departments set deleted='Y' where id=$id");
+	header("location: departments.php");
+
+?>

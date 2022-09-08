@@ -1,0 +1,330 @@
+<?php 
+
+function getFileSize($fn){
+	
+	return filesize($fn);
+}
+function formatBytes($bytes, $precision = 2) { 
+      if ($bytes > pow(1024,3)) return round($bytes / pow(1024,3), $precision)."GB";
+    else if ($bytes > pow(1024,2)) return round($bytes / pow(1024,2), $precision)."MB";
+    else if ($bytes > 1024) return round($bytes / 1024, $precision)."KB";
+    else return ($bytes)."B";
+}
+
+function getFileMimeType($fn){
+	
+	return get_mime_type($fn);
+}
+
+
+function get_mime_type($filename) {
+    $idx = explode( '.', $filename );
+    $count_explode = count($idx);
+    $idx = strtolower($idx[$count_explode-1]);
+
+    $mimet = array( 
+        'txt' => 'text/plain',
+        'htm' => 'text/html',
+        'html' => 'text/html',
+        'php' => 'text/html',
+        'css' => 'text/css',
+        'js' => 'application/javascript',
+        'json' => 'application/json',
+        'xml' => 'application/xml',
+        'swf' => 'application/x-shockwave-flash',
+        'flv' => 'video/x-flv',
+
+        // images
+        'png' => 'image/png',
+        'jpe' => 'image/jpeg',
+        'jpeg' => 'image/jpeg',
+        'jpg' => 'image/jpeg',
+        'gif' => 'image/gif',
+        'bmp' => 'image/bmp',
+        'ico' => 'image/vnd.microsoft.icon',
+        'tiff' => 'image/tiff',
+        'tif' => 'image/tiff',
+        'svg' => 'image/svg+xml',
+        'svgz' => 'image/svg+xml',
+
+        // archives
+        'zip' => 'application/zip',
+        'rar' => 'application/x-rar-compressed',
+        'exe' => 'application/x-msdownload',
+        'msi' => 'application/x-msdownload',
+        'cab' => 'application/vnd.ms-cab-compressed',
+
+        // audio/video
+        'mp3' => 'audio/mpeg',
+        'qt' => 'video/quicktime',
+        'mov' => 'video/quicktime',
+
+        // adobe
+        'pdf' => 'application/pdf',
+        'psd' => 'image/vnd.adobe.photoshop',
+        'ai' => 'application/postscript',
+        'eps' => 'application/postscript',
+        'ps' => 'application/postscript',
+
+        // ms office
+        'doc' => 'application/msword',
+        'rtf' => 'application/rtf',
+        'xls' => 'application/vnd.ms-excel',
+        'ppt' => 'application/vnd.ms-powerpoint',
+        'docx' => 'application/msword',
+        'xlsx' => 'application/vnd.ms-excel',
+        'pptx' => 'application/vnd.ms-powerpoint',
+
+
+        // open office
+        'odt' => 'application/vnd.oasis.opendocument.text',
+        'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
+    );
+
+    if (isset( $mimet[$idx] )) {
+     return $mimet[$idx];
+    } else {
+     return 'application/octet-stream';
+    }
+ }
+ 
+ 
+ function get_file_image($filename) {
+    $idx = explode( '.', $filename );
+    $count_explode = count($idx);
+    $idx = strtolower($idx[$count_explode-1]);
+
+    $mimet = array( 
+        'txt' => 'txt.png',
+        'htm' => 'html.png',
+        'html' => 'html.png',
+        'php' => 'php.png',
+        'css' => 'css.png',
+        'js' => 'js.png',
+        'json' => 'json.png',
+        'xml' => 'xml.png',
+        'swf' => 'swf.png',
+        'flv' => 'flv.png',
+
+        // images
+        'png' => 'png.png',
+        'jpe' => 'jpeg.png',
+        'jpeg' => 'jpeg.png',
+        'jpg' => 'jpeg.png',
+        'gif' => 'gif.png',
+        'bmp' => 'bmp.png',
+        'ico' => 'ico.png',
+        'tiff' => 'tiff.png',
+        'tif' => 'tiff.png',
+        'svg' => 'svg.png',
+        'svgz' => 'svg.png',
+
+        // archives
+        'zip' => 'zip.png',
+        'rar' => 'rar.png',
+        'exe' => 'exe.png',
+        'msi' => 'msi.png',
+        'cab' => 'cab.png',
+
+        // audio/video
+        'mp3' => 'mp3.png',
+        'qt' => 'qt.png',
+        'mov' => 'qt.png',
+
+        // adobe
+        'pdf' => 'pdf.png',
+        'psd' => 'psd.png',
+        'ai' => 'ai.png',
+        'eps' => 'eps.png',
+        'ps' => 'ps.png',
+
+        // ms office
+        'doc' => 'word.png',
+        'rtf' => 'word.png',
+        'xls' => 'excel.png',
+        'ppt' => 'ppt.png',
+        'docx' => 'word.png',
+        'xlsx' => 'excel.png',
+        'pptx' => 'ppt.png',
+
+  'mp4' => 'mp4.png',
+   'mpeg' => 'mp4.png',
+    'vb' => 'vs.png',
+	'vc' => 'vs.png',
+	'vcc' => 'vs.png',
+	'cpp' => 'vs.png',
+	'cs' => 'vs.png',
+        // open office
+        'odt' => 'odt.png',
+        'ods' => 'ods.png',
+    );
+
+    if (isset( $mimet[$idx] )) {
+     return $mimet[$idx];
+    } else {
+     return 'file.png';
+    }
+ }
+
+
+function FileSizeConvert($bytes)
+{
+    $bytes = floatval($bytes);
+        $arBytes = array(
+            0 => array(
+                "UNIT" => "TB",
+                "VALUE" => pow(1024, 4)
+            ),
+            1 => array(
+                "UNIT" => "GB",
+                "VALUE" => pow(1024, 3)
+            ),
+            2 => array(
+                "UNIT" => "MB",
+                "VALUE" => pow(1024, 2)
+            ),
+            3 => array(
+                "UNIT" => "KB",
+                "VALUE" => 1024
+            ),
+            4 => array(
+                "UNIT" => "B",
+                "VALUE" => 1
+            ),
+        );
+
+    foreach($arBytes as $arItem)
+    {
+        if($bytes >= $arItem["VALUE"])
+        {
+            $result = $bytes / $arItem["VALUE"];
+            $result = str_replace(".", "," , strval(round($result, 2)))." ".$arItem["UNIT"];
+            break;
+        }
+    }
+    return $result;
+}
+
+function getFilePermission($fileid,$usernid,$operation){
+		//$fileid is points to id field on the database and not file archive/record number
+		$file_rec=mysql_fetch_assoc(mysql_query("select * from pro_documents where id=$fileid"));
+		
+		//get file folder. The file inherits all permissions on the folder
+		$folderid=$file_rec['folderid'];
+		$basefolder=getBaseFolder($folderid);
+		$publicfolder=returnQueryValue("select public from pro_folder where id=$basefolder","public");
+		if($publicfolder=="Y"){
+			return "Y";exit;
+		}
+		$ass_folderdept=returnQueryValue("select deptid from pro_perm_folder_dept where folderid=$basefolder","deptid");
+		
+		$folder_creator=returnQueryValue("select createdby from pro_folder where id=$basefolder","createdby");
+		$folder_creator_id=returnQueryValue("select id from pro_users where usern='$folder_creator'","id");
+		
+		$usertype=returnQueryValue("select usertype from pro_users where id=$usernid","usertype");
+		if($usertype=="superadmin"){
+			return "Y";exit;
+		}
+		
+		if($usertype=="admin"){
+			return "Y";exit;
+		}
+		
+		if($folder_creator_id==$usernid){
+			//he/she is the owner
+			return "Y";exit;
+		}
+		
+		$nm=recNum("select * from pro_perm_folder_dept_users where userid=$usernid");
+		
+		if($nm<1){
+			return "N";exit;
+		}
+		
+		$op_count=recNum("select * from pro_perm_folder_dept_users_roles where userid = $usernid and $operation='Y'");
+		if($op_count>0){
+			return "Y";
+		}
+		else{
+			return "N";exit;
+		}
+		
+		
+	}
+	
+	function getFolderPermission($folderid,$usernid,$operation){
+		//$fileid is points to id field on the database and not file archive/record number
+		//$file_rec=mysql_fetch_assoc(mysql_query("select * from pro_documents where id=$fileid"));
+		
+		//get file folder. The file inherits all permissions on the folder
+		$folderid=$folderid;
+		$basefolder=getBaseFolder($folderid);
+		$ass_folderdept=returnQueryValue("select deptid from pro_perm_folder_dept where folderid=$basefolder","deptid");
+		$publicfolder=returnQueryValue("select public from pro_folder where id=$basefolder","public");
+		if($publicfolder=="Y"){
+			return "Y";exit;
+		}
+		$folder_creator=returnQueryValue("select createdby from pro_folder where id=$basefolder","createdby");
+		//echo $folder_creator;exit;
+		$folder_creator_id=returnQueryValue("select id from pro_users where usern='$folder_creator'","id");
+		//echo $usernid."-Session user<br>";
+		//echo $folder_creator_id."-owner<br>";
+		$usertype=returnQueryValue("select usertype from pro_users where id=$usernid","usertype");
+		if($usertype=="superadmin"){
+			return "Y";exit;
+		}
+		
+		if($usertype=="admin"){
+			return "Y";exit;
+		}
+		
+		if($folder_creator_id==$usernid){
+			//he/she is the owner
+			return "Y";exit;
+		}
+		
+		$nm=recNum("select * from pro_perm_folder_dept_users where userid=$usernid");
+		
+		if($nm<1){
+			return "N";exit;
+		}
+		
+		$op_count=recNum("select * from pro_perm_folder_dept_users_roles where userid = $usernid and $operation='Y'");
+		if($op_count>0){
+			return "Y";
+		}
+		else{
+			return "N";exit;
+		}
+		
+		
+	}
+	
+	function getBaseFolder($folderid){
+		$rd=mysql_fetch_assoc(mysql_query("select * from pro_folder where id=$folderid"));
+		$basefolder=$rd['parentfolder'];
+		if($basefolder==0){
+			return $folderid;
+			exit;
+		}
+		$oldfolder=$basefolder;
+		$fldo=getBaseFolder($basefolder);
+		return $fldo;
+		
+		
+		
+		
+		
+		//echo $basefolder;exit;
+		
+		
+	}
+	
+	function getSelfFolderParent($folderid){
+		$rd=mysql_fetch_assoc(mysql_query("select * from pro_folder where id=$folderid"));
+		$basefolder=$rd['parentfolder'];
+		return $basefolder;
+	}
+	
+
+?>

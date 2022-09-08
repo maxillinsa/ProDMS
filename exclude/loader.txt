@@ -1,0 +1,21 @@
+var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+function startApp(){
+	
+	var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+	//alert(h);
+	var widtho=window.outerWidth-15;
+	document.body.innerHTML="<iframe id='frmloader' src='index2.php' style='"+"height:"+window.outerHeight+";width:"+ widtho +";"+";border:none' border=0>";
+}
+
+function myFunction(){
+	document.getElementById("frmloader").style.height=window.outerHeight;
+	document.getElementById("frmloader").style.width=window.outerWidth;
+}

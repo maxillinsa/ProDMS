@@ -1,0 +1,52 @@
+<?php
+//ini_set('max_file_uploads', '1000');
+	include("controller/func.php");
+$dd = date('Y-m-d H:i:s');
+	$curuser=@$_COOKIE['curuser'];
+	$fileid=$_GET['fileid'];
+	//echo $fileid; exit;
+
+if (!file_exists('instage')) {
+	mkdir('instage', 0777);
+}
+
+$realname=$_FILES['file']['name'];
+$ext=get_extension($_FILES['file']['name']);
+$fileNm1=md5($_SERVER['REMOTE_ADDR'].rand()).".".$ext;
+move_uploaded_file($_FILES['file']['tmp_name'], 'instage/' . $fileNm1);
+
+$instage_file='instage/' . $fileNm1;
+$vault_file='vault/' . $fileNm1;
+
+$oldfilename=returnQueryValue("select realname from pro_documents where id=$fileid","realname");
+
+//echo "update pro_documents set name='$fileNm1', realname='$realname' where id='$fileNm1'";exit;
+
+$filx=copy($instage_file,$vault_file);
+				 if(!$filx)
+				 {
+					//var_dump($filx);
+					//echo "Falied";
+					 @unlink($instage_file);
+				 }
+				 else
+				 {
+					// echo "copied $file into $newfile\n";
+				 }
+				
+
+//echo "File uploaded successfully.";
+
+$res=mysql_query("update pro_documents set name='$fileNm1', realname='$realname' where id='$fileid'"); 
+
+$op="Replaced ".$oldfilename." with ". $realname;
+$userid=returnQueryValue("select id from pro_users where usern='$curuser'","id");
+$loga=AudLog($userid,$op,0,$fileid);
+
+echo $vault_file;
+
+function get_extension($file) {
+ $extension = end(explode(".", $file));
+ return $extension ? $extension : false;
+}
+?>
